@@ -2,30 +2,30 @@
 
 void DataEntry(Data* (&d), int& n)
 {
-	//временные переменные 
+	//РІСЂРµРјРµРЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ 
 	Initials initials;
 	Date date;
 	Adress adress;
 
-	cout << "Введите размер массива: ";
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°: ";
 	cin >> n;
 
-	//выделяем память для массива данных
+	//РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РґР»СЏ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С…
 	d = new Data[n];
 
-	//вводим данные
+	//РІРІРѕРґРёРј РґР°РЅРЅС‹Рµ
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Введите ФИО: ";
+		cout << "Р’РІРµРґРёС‚Рµ Р¤РРћ: ";
 		cin >> initials.surname >> initials.name >> initials.patrinymic;
 
-		cout << "Введите дату: ";
+		cout << "Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ: ";
 		cin >> date.day >> date.month >> date.year;
 
-		cout << "Введите адрес: ";
+		cout << "Р’РІРµРґРёС‚Рµ Р°РґСЂРµСЃ: ";
 		cin >> adress.city >> adress.home;
 
-		//добавляем новые данные в элемент массива объект класса
+		//РґРѕР±Р°РІР»СЏРµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ РІ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР°
 		d[i].DataEntry(initials, date, adress);
 
 		cout << "_______________________________________________\n";
@@ -34,36 +34,36 @@ void DataEntry(Data* (&d), int& n)
 
 void DataReading(Data* (&d), int& n, string fileName)
 {
-	//создаем поток для данных
+	//СЃРѕР·РґР°РµРј РїРѕС‚РѕРє РґР»СЏ РґР°РЅРЅС‹С…
 	ifstream reading(fileName);
 
 	if (reading)
 	{
-		//временные переменные
+		//РІСЂРµРјРµРЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ
 		Initials initials;
 		Date date;
 		Adress adress;
 
 		reading >> n;
 
-		//выделяем память для массива данных 
+		//РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РґР»СЏ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С… 
 		d = new Data[n];
 
 
-		//считываем данные
+		//СЃС‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ
 		for (int i = 0; i < n; i++)
 		{
 			reading >> initials.surname >> initials.name >> initials.patrinymic;
 			reading >> date.day >> date.month >> date.year;
 			reading >> adress.city >> adress.home;
 
-			//Добавляем данные
+			//Р”РѕР±Р°РІР»СЏРµРј РґР°РЅРЅС‹Рµ
 			d[i].DataEntry(initials, date, adress);
 		}
-		cout << "Данные считаны!" << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ СЃС‡РёС‚Р°РЅС‹!" << endl;
 	}
 	else
-		cout << "Ошибка открытия файла!" << endl;
+		cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << endl;
 
 	reading.close();
 }
@@ -72,7 +72,7 @@ void Print(Data* d, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Данные №" << i + 1 << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ в„–" << i + 1 << endl;
 
 		d[i].Print();
 		cout << "______________________________________________________\n";
@@ -81,31 +81,31 @@ void Print(Data* d, int n)
 
 void DataChange(Data* d, int n)
 {
-	//временные переменные
+	//РІСЂРµРјРµРЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ
 	Initials initials;
 	Date date;
 	Adress adress;
 	int _n;
 
-	cout << "Введите номер нужного элемента (от 1 до " << n << "): ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РЅСѓР¶РЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° (РѕС‚ 1 РґРѕ " << n << "): ";
 	cin >> _n;
 	_n--;
 
 	if (_n >= 0 && _n < n)
 	{
-		cout << "Введите новую ФИО: ";
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ Р¤РРћ: ";
 		cin >> initials.surname >> initials.name >> initials.patrinymic;
 
-		cout << "Введите новую дату: ";
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ РґР°С‚Сѓ: ";
 		cin >> date.day >> date.month >> date.year;
 
-		cout << "Введите новый адрес: ";
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ Р°РґСЂРµСЃ: ";
 		cin >> adress.city >> adress.home;
 
 		d[_n].DataEntry(initials, date, adress);
 	}
 	else
-		cout << "Номер введен не верно!" << endl;
+		cout << "РќРѕРјРµСЂ РІРІРµРґРµРЅ РЅРµ РІРµСЂРЅРѕ!" << endl;
 }
 
 void Copy(Data* d_n, Data* d_o, int n)
@@ -116,7 +116,7 @@ void Copy(Data* d_n, Data* d_o, int n)
 
 void AddData(Data* (&d), int& n)
 {
-	//временные переменные
+	//РІСЂРµРјРµРЅРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ
 	Initials initials;
 	Date date;
 	Adress adress;
@@ -129,18 +129,18 @@ void AddData(Data* (&d), int& n)
 
 	Copy(d, buf, size);
 
-	cout << "Введите новую ФИО: ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ Р¤РРћ: ";
 	cin >> initials.surname >> initials.name >> initials.patrinymic;
 
-	cout << "Введите новую дату: ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ РґР°С‚Сѓ: ";
 	cin >> date.day >> date.month >> date.year;
 
-	cout << "Введите новый адрес: ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ Р°РґСЂРµСЃ: ";
 	cin >> adress.city >> adress.home;
 
 	d[size].DataEntry(initials, date, adress);
 
-	cout << "Данные добавлены!" << endl;
+	cout << "Р”Р°РЅРЅС‹Рµ РґРѕР±Р°РІР»РµРЅС‹!" << endl;
 
 	delete[] buf;
 }
@@ -150,7 +150,7 @@ void DeleteData(Data* (&d), int& n)
 	int _n;
 	Data* buf = new Data[n];
 
-	cout << "Введите номер нужного элемента (от 1 до " << n << "): ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РЅСѓР¶РЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° (РѕС‚ 1 РґРѕ " << n << "): ";
 	cin >> _n;
 	_n--;
 
@@ -171,10 +171,10 @@ void DeleteData(Data* (&d), int& n)
 			}
 		}
 
-		cout << "Данные удалены!" << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ СѓРґР°Р»РµРЅС‹!" << endl;
 	}
 	else
-		cout << "Номер введен не верно!" << endl;
+		cout << "РќРѕРјРµСЂ РІРІРµРґРµРЅ РЅРµ РІРµСЂРЅРѕ!" << endl;
 
 	delete[]buf;
 }
@@ -199,7 +199,7 @@ void SortingData(Data* d, int n)
 		}
 	}
 
-	cout << "Данные отсортированы!\nКоличество сортировок: " << numOfSorted << endl;
+	cout << "Р”Р°РЅРЅС‹Рµ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅС‹!\nРљРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕСЂС‚РёСЂРѕРІРѕРє: " << numOfSorted << endl;
 }
 
 void SaveData(Data* d, int n, string fileName)
@@ -221,9 +221,9 @@ void SaveData(Data* d, int n, string fileName)
 		}
 	}
 	else
-		cout << "Ошибка открытия файла!" << endl;
+		cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << endl;
 
-	cout << "Даннные сохранены в файл: " << fileName << endl;
+	cout << "Р”Р°РЅРЅРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅС‹ РІ С„Р°Р№Р»: " << fileName << endl;
 
 	record.close();
 }
