@@ -39,9 +39,9 @@ Data::~Data()
 
 void Data::Print()
 {
-	cout << "ÔÈÎ: " << initials.surname << " " << initials.name << " " << initials.patrinymic << endl;
-	cout << "Äàòà: " << date.day << " " << date.month << " " << date.year << endl;
-	cout << "Àäðåññ: " << adress.city << " " << adress.home << endl;
+	cout << "Ð¤Ð˜Ðž: " << initials.surname << " " << initials.name << " " << initials.patrinymic << endl;
+	cout << "Ð”Ð°Ñ‚Ð°: " << date.day << " " << date.month << " " << date.year << endl;
+	cout << "ÐÐ´Ñ€ÐµÑÑ: " << adress.city << " " << adress.home << endl;
 }
 
 void Data::DataEntry(Initials initials_, Date date_, Adress adress_)
