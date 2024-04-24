@@ -28,26 +28,26 @@ struct Adress
 
 
 
-// Прототип класса
+// РџСЂРѕС‚РѕС‚РёРї РєР»Р°СЃСЃР°
 class Data
 {
-	//закрытая часть класса
+	//Р·Р°РєСЂС‹С‚Р°СЏ С‡Р°СЃС‚СЊ РєР»Р°СЃСЃР°
 private:
 	Initials initials;
 	Date date;
 	Adress adress;
 
-	//открытая часть класса
+	//РѕС‚РєСЂС‹С‚Р°СЏ С‡Р°СЃС‚СЊ РєР»Р°СЃСЃР°
 public:
-	//обязательные методы класса
-	Data();//конструктор по умолчанию. Cоздает пусто объект
-	Data(Initials initials_, Date date_, Adress adress_);//конструктор с параметрами
-	~Data();//деструктор
+	//РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР°
+	Data();//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ. CРѕР·РґР°РµС‚ РїСѓСЃС‚Рѕ РѕР±СЉРµРєС‚
+	Data(Initials initials_, Date date_, Adress adress_);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	~Data();//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
 	void Print();
 	void DataEntry(Initials initials_, Date date_, Adress adress_);
 	
-	//вывод данных (полей) из класса
+	//РІС‹РІРѕРґ РґР°РЅРЅС‹С… (РїРѕР»РµР№) РёР· РєР»Р°СЃСЃР°
 	Initials GetInitials() { return initials; };
 	Date GetDate() { return date; };
 	Adress GetAdress() { return adress; };
