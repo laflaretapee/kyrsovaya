@@ -2,7 +2,7 @@
 
 #include "data.h"
 
-//прототипы функций 
+//РїСЂРѕС‚РѕС‚РёРїС‹ С„СѓРЅРєС†РёР№ 
 
 void DataEntry(Data* (&d), int& n);
 void DataReading(Data* (&d), int& n, string fileName);
